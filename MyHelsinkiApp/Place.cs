@@ -1,6 +1,7 @@
-﻿
-using System;
+﻿using System;
 
+namespace PlacePlace
+{ 
 public class Place
 {
     public string id { get; set; }
@@ -69,4 +70,5 @@ public class Tag
 {
     public string id { get; set; }
     public string name { get; set; }
+}
 }
