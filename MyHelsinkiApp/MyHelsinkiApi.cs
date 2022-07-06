@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MyHelsinkiApp;
 using MyHelsinkiActivities;
 using MyHelsinkiEvents;
+using MyHelsinkiPlaces;  //tämä lisätty /heta
 
 namespace MyHelsinkiApp
 {
@@ -53,7 +54,23 @@ namespace MyHelsinkiApp
             return response;
 
         }
-     }
+
+        public static async Task<PlacesList> GetPlaces(int limit, string tag) // tämä lisätty kokonaan / heta
+        {
+            string placeUrl = url + "/v1/places/";
+
+            string urlParams = "";
+
+            if (limit > 0)
+            {
+                urlParams = "?limit=" + limit + "&tags_search=" + tag;
+            }
+
+            var response = await ApiHelper.RunAsync<PlacesList>(placeUrl, urlParams);
+            return response;
+
+        }
+    }
     }
     
     
