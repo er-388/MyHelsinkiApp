@@ -5,7 +5,7 @@ namespace ActivitiesActivities
 
 {
 
-    public class Rootobject
+    public class Activity
     {
         public string id { get; set; }
         public DateTime updated { get; set; }
