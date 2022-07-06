@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Text.Json;
 using PlacePlace;
 using MyHelsinkiApp;
+using ActivitiesActivities;
 
 namespace MyHelsinkiApp
 {
@@ -16,17 +17,22 @@ namespace MyHelsinkiApp
         //    Console.WriteLine("jotain tähän");
             
         //}
+
+
         static void Main(string[] args)
         {
-            string input = "v2/place/4";
-            Place haettava = MyHelsinkiApi.GetSingleEvent(input);
+            string input = "v2/activity/418816d7-07b7-4501-8139-4fe9c36e6aae";
+            Activity haettava = MyHelsinkiApi.GetSingleActivity(input);
+            foreach(var i in haettava.availableMonths)
+            {
+                Console.WriteLine(i);
+            }
+            
 
-            Console.WriteLine(haettava.name.fi);
+            string input2 = "v1/events/";
+            //Place haku = MyHelsinkiApi.GetSingleEvent(input2);
 
-            string input2 = "v1/event/linkedevents:agg-182";
-            Place haku = MyHelsinkiApi.GetSingleEvent(input2);
-
-            Console.WriteLine(haku.name.fi);
+            //Console.WriteLine(haku.name.fi);
             
             // Aadan terveiset
             //Erkin terveiset
