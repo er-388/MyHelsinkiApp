@@ -1,9 +1,16 @@
 ﻿
 using System;
 
-namespace ActivitiesActivities
-
+namespace MyHelsinkiActivities
 {
+
+
+    public class ActivityList
+    {
+        public int offset { get; set; }
+        public int count { get; set; }
+        public Activity[] rows { get; set; }
+    }
 
     public class Activity
     {
@@ -28,6 +35,14 @@ namespace ActivitiesActivities
     {
         public En en { get; set; }
         public Fi fi { get; set; }
+        public Fr fr { get; set; }
+        public De de { get; set; }
+        public Es es { get; set; }
+        public It it { get; set; }
+        public Ru ru { get; set; }
+        public Sv sv { get; set; }
+        public Ja ja { get; set; }
+        public Zh zh { get; set; }
     }
 
     public class En
@@ -37,6 +52,54 @@ namespace ActivitiesActivities
     }
 
     public class Fi
+    {
+        public string name { get; set; }
+        public string description { get; set; }
+    }
+
+    public class Fr
+    {
+        public string name { get; set; }
+        public string description { get; set; }
+    }
+
+    public class De
+    {
+        public string name { get; set; }
+        public string description { get; set; }
+    }
+
+    public class Es
+    {
+        public string name { get; set; }
+        public string description { get; set; }
+    }
+
+    public class It
+    {
+        public string name { get; set; }
+        public string description { get; set; }
+    }
+
+    public class Ru
+    {
+        public string name { get; set; }
+        public string description { get; set; }
+    }
+
+    public class Sv
+    {
+        public string name { get; set; }
+        public string description { get; set; }
+    }
+
+    public class Ja
+    {
+        public string name { get; set; }
+        public string description { get; set; }
+    }
+
+    public class Zh
     {
         public string name { get; set; }
         public string description { get; set; }
@@ -56,50 +119,50 @@ namespace ActivitiesActivities
     public class Sunday
     {
         public bool open { get; set; }
-        public object from { get; set; }
-        public object to { get; set; }
+        public string from { get; set; }
+        public string to { get; set; }
     }
 
     public class Tuesday
     {
         public bool open { get; set; }
-        public object from { get; set; }
-        public object to { get; set; }
+        public string from { get; set; }
+        public string to { get; set; }
     }
 
     public class Wednesday
     {
         public bool open { get; set; }
-        public object from { get; set; }
-        public object to { get; set; }
+        public string from { get; set; }
+        public string to { get; set; }
     }
 
     public class Monday
     {
         public bool open { get; set; }
-        public object from { get; set; }
-        public object to { get; set; }
+        public string from { get; set; }
+        public string to { get; set; }
     }
 
     public class Friday
     {
         public bool open { get; set; }
-        public object from { get; set; }
-        public object to { get; set; }
+        public string from { get; set; }
+        public string to { get; set; }
     }
 
     public class Thursday
     {
         public bool open { get; set; }
-        public object from { get; set; }
-        public object to { get; set; }
+        public string from { get; set; }
+        public string to { get; set; }
     }
 
     public class Saturday
     {
         public bool open { get; set; }
-        public object from { get; set; }
-        public object to { get; set; }
+        public string from { get; set; }
+        public string to { get; set; }
     }
 
     public class Address
@@ -126,8 +189,8 @@ namespace ActivitiesActivities
 
     public class Priceeur
     {
-        public int from { get; set; }
-        public object to { get; set; }
+        public float? from { get; set; }
+        public float? to { get; set; }
         public string pricingType { get; set; }
     }
 
@@ -142,4 +205,5 @@ namespace ActivitiesActivities
         public string smallUrl { get; set; }
         public string largeUrl { get; set; }
     }
+
 }

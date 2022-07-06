@@ -4,9 +4,9 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Text.Json;
-using PlacePlace;
 using MyHelsinkiApp;
-using ActivitiesActivities;
+using MyHelsinkiActivities;
+using MyHelsinkiEvents;
 
 namespace MyHelsinkiApp
 {
