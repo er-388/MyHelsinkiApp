@@ -5,7 +5,7 @@ namespace MyHelsinkiApp
     public class Rootobject
     {
         public Meta meta { get; set; }
-        public Datum[] data { get; set; }
+        public Place[] data { get; set; }
         public Tags tags { get; set; }
     }
 
@@ -277,7 +277,7 @@ namespace MyHelsinkiApp
         public string sub98 { get; set; }
     }
 
-    public class Datum
+    public class Place
     {
         public string id { get; set; }
         public Name name { get; set; }

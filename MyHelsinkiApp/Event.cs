@@ -7,7 +7,7 @@ namespace MyHelsinkiEvents
     public class EventsList
     {
         public Meta meta { get; set; }
-        public Datum[] data { get; set; }
+        public Event[] data { get; set; }
         public Tags tags { get; set; }
     }
 
@@ -533,7 +533,8 @@ namespace MyHelsinkiEvents
         public string linkedeventsysop9882 { get; set; }
     }
 
-    public class Datum
+    public class Event
+
     {
         public string id { get; set; }
         public Name name { get; set; }

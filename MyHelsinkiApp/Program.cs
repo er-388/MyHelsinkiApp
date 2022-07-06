@@ -19,28 +19,29 @@ namespace MyHelsinkiApp
         //}
 
 
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            string input = "v2/activity/418816d7-07b7-4501-8139-4fe9c36e6aae";
+           /* string input = "v2/activity/418816d7-07b7-4501-8139-4fe9c36e6aae";
             Activity haettava = MyHelsinkiApi.GetSingleActivity(input);
             foreach(var i in haettava.availableMonths)
             {
                 Console.WriteLine(i);
-            }
+            }*/
             
 
-            string input2 = "v1/events/";
+            //string input2 = "v1/events/";
             //Place haku = MyHelsinkiApi.GetSingleEvent(input2);
 
-<<<<<<< HEAD
-            string input2 = "v1/event/linkedevents:agg-182";
-            Place haku = MyHelsinkiApi.GetSingleEvent(input2);
+            
+            string tag = "Teatteri";
+            EventsList haku = await MyHelsinkiApi.GetEvents(20, tag);
 
-            Console.WriteLine(haku.name.fi);
+            foreach(Event muuta in haku.data)
+            {
 
-=======
-            //Console.WriteLine(haku.name.fi);
->>>>>>> 4f66734e5faa5ff0b0ba2b0dd41fdfe59994e427
+                Console.WriteLine(muuta.name.fi + "\n" + muuta.location.address.street_address);
+            }
+            
             
             // Aadan terveiset
             //Erkin terveiset
