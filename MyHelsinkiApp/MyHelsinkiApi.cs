@@ -7,7 +7,7 @@ using PlacePlace;
 namespace MyHelsinkiApp
 {
 
-        public static class MyHelsinkiApi
+    public static class MyHelsinkiApi
     {
         const string url = "https://open-api.myhelsinki.fi/";//Loppuosa: trains/latest/1
         public static Place GetSingleEvent(string trainName)
@@ -18,8 +18,12 @@ namespace MyHelsinkiApp
             return response;
         }
 
-        
+       
+       
+
+    }  
     }
     
-    }
+    
+
 

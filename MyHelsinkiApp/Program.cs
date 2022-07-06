@@ -27,6 +27,7 @@ namespace MyHelsinkiApp
             Place haku = MyHelsinkiApi.GetSingleEvent(input2);
 
             Console.WriteLine(haku.name.fi);
+
             
             // Aadan terveiset
             //Erkin terveiset
