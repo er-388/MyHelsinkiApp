@@ -451,13 +451,13 @@ namespace MyHelsinkiApp
 
         public static async Task <bool> SearchbyEventNameorEventTag()
         {
-            Console.WriteLine("Search by event name(1) / search by tag(2)");
-            Console.WriteLine("Or press any another key to return. ");
+            Console.WriteLine("Write (1) to search by event name or (2) to search by tag");
+            Console.WriteLine("Or write (0) to back. ");
 
 
 
             bool userInput = int.TryParse(Console.ReadLine(), out int userChoice);
-            if (!userInput)
+            if (!userInput == true)
             {
                 Console.WriteLine("    Wrong format of input, please try to enter numbers");
                 return true;
@@ -469,11 +469,11 @@ namespace MyHelsinkiApp
 
                     case 1:
                         {
-                            Console.Write("Kirjoita hakusana (tai paina ENTER palataksesi takaisin): ");
+                            Console.Write("Write search term (or press ENTER to go back): ");
                             string searchTerm = Console.ReadLine();
                             if (String.IsNullOrWhiteSpace(searchTerm) == false)
                             {
-                                Console.Write("Montako hakutulosta haluat? ");
+                                Console.Write("How many search results do you want? ");
                                 if (Int32.TryParse(Console.ReadLine(), out int searchLimit) == true)
                                 {
                                     try
@@ -485,18 +485,18 @@ namespace MyHelsinkiApp
                                             foreach (var eventti in searchResult)
                                             {
                                                 Console.WriteLine(eventti.name.fi);
-                                                Console.WriteLine("alkaa " + eventti.event_dates.starting_day);
+                                                Console.WriteLine("begins " + eventti.event_dates.starting_day);
                                             }
                                         }
 
                                         else if (searchResult.Count() == 0)
                                         {
-                                            Console.WriteLine("Yhtään tapahtumaa ei löytynyt!");
+                                            Console.WriteLine("No events were found!");
                                         }
                                     }
                                     catch
                                     {
-                                        Console.WriteLine("Yhtään tapahtumaa ei löytynyt!");
+                                        Console.WriteLine("No events were found!");
                                     }
                                    
                                 }
@@ -507,10 +507,10 @@ namespace MyHelsinkiApp
                         }
                     case 2:
                         {
-                            Console.WriteLine("Syötä hakusana");
+                            Console.WriteLine("Enter the tag");
                             string hakusana = Console.ReadLine();
 
-                            Console.WriteLine("Montako tapahtumaa haluat hakea?");
+                            Console.WriteLine("How many search results do you want?");
                             int maara = int.Parse(Console.ReadLine());
 
                             EventsList hakuja = await MyHelsinkiApi.EventSearchByTag(maara, hakusana);
@@ -523,6 +523,9 @@ namespace MyHelsinkiApp
                             }
                             return true;
                         }
+
+                    case 0:
+                        return false;
 
 
                     default:
