@@ -97,7 +97,7 @@ namespace MyHelsinkiApp
                 searchList.data.
                 Where(e => e.name.fi.ToLower().
                 Contains(searchTerm.ToLower()) &&
-                e.event_dates.starting_day > DateTime.Now.Date
+                e.event_dates.starting_day >= DateTime.Now.Date
                 && e.event_dates.starting_day < DateTime.Now.AddDays(60)).
                 OrderBy(e => e.event_dates.starting_day)
                 .Take(limit);
