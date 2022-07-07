@@ -1,8 +1,10 @@
 ﻿using System;
-namespace MyHelsinkiApp
+namespace MyHelsinkiPlaces
 {
 
-    public class Rootobject
+
+    public class PlacesList // rootobject muutettu tämän nimiseksi /heta
+
     {
         public Meta meta { get; set; }
         public Place[] data { get; set; }
