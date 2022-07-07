@@ -2,7 +2,7 @@
 namespace MyHelsinkiApp
 {
 
-    public class Rootobject
+    public class PlaceList
     {
         public Meta meta { get; set; }
         public Place[] data { get; set; }

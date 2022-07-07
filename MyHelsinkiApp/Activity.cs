@@ -1,9 +1,9 @@
-﻿
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace MyHelsinkiActivities
 {
-
 
     public class ActivityList
     {
@@ -35,14 +35,6 @@ namespace MyHelsinkiActivities
     {
         public En en { get; set; }
         public Fi fi { get; set; }
-        public Fr fr { get; set; }
-        public De de { get; set; }
-        public Es es { get; set; }
-        public It it { get; set; }
-        public Ru ru { get; set; }
-        public Sv sv { get; set; }
-        public Ja ja { get; set; }
-        public Zh zh { get; set; }
     }
 
     public class En
@@ -52,54 +44,6 @@ namespace MyHelsinkiActivities
     }
 
     public class Fi
-    {
-        public string name { get; set; }
-        public string description { get; set; }
-    }
-
-    public class Fr
-    {
-        public string name { get; set; }
-        public string description { get; set; }
-    }
-
-    public class De
-    {
-        public string name { get; set; }
-        public string description { get; set; }
-    }
-
-    public class Es
-    {
-        public string name { get; set; }
-        public string description { get; set; }
-    }
-
-    public class It
-    {
-        public string name { get; set; }
-        public string description { get; set; }
-    }
-
-    public class Ru
-    {
-        public string name { get; set; }
-        public string description { get; set; }
-    }
-
-    public class Sv
-    {
-        public string name { get; set; }
-        public string description { get; set; }
-    }
-
-    public class Ja
-    {
-        public string name { get; set; }
-        public string description { get; set; }
-    }
-
-    public class Zh
     {
         public string name { get; set; }
         public string description { get; set; }
@@ -119,8 +63,8 @@ namespace MyHelsinkiActivities
     public class Sunday
     {
         public bool open { get; set; }
-        public string from { get; set; }
-        public string to { get; set; }
+        public object from { get; set; }
+        public object to { get; set; }
     }
 
     public class Tuesday
@@ -205,5 +149,6 @@ namespace MyHelsinkiActivities
         public string smallUrl { get; set; }
         public string largeUrl { get; set; }
     }
+
 
 }

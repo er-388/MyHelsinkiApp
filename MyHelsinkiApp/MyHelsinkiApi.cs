@@ -30,12 +30,13 @@ namespace MyHelsinkiApp
 
         return response;
     }
-    public static Event GetSingleEvent(string trainName)
+    public static async Task<Event> GetSingleEvent(string trainName)
     {
         string urlParams = trainName;
-        var response = ApiHelper.RunAsync<Event>(url, urlParams).GetAwaiter().GetResult();
+        var response = await ApiHelper.RunAsync<Event>(url, urlParams);
 
         return response;
+
     }
         
         public static async Task<EventsList> GetEvents(int limit, string tag)
@@ -53,7 +54,25 @@ namespace MyHelsinkiApp
             return response;
 
         }
-     }
+        public static async Task<PlaceList> GetPlaces()
+        {
+            string eventUrl = url + "/v1/places/";
+
+            string urlParams = "";
+
+            var response = await ApiHelper.RunAsync<PlaceList>(eventUrl, urlParams);
+            return response;
+
+        }
+        public static async Task<ActivityList> GetActivities(int limit)
+        {
+            string ActivityUrl = url + "/v2/activities";
+            string urlParams = "?limit=" + limit;
+
+            var response = await ApiHelper.RunAsync<ActivityList>(ActivityUrl, urlParams);
+            return response;
+        }
+    }
     }
     
     
