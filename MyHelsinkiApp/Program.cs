@@ -25,11 +25,7 @@ namespace MyHelsinkiApp
             while (displayMainMenu)
             {
                 displayMainMenu = await MainMenu();
-            }
-            // Aadan terveiset
-            // Erkin terveiset
-            // hetan terveiset
-
+            } 
         }
 
 
@@ -97,23 +93,7 @@ namespace MyHelsinkiApp
                                     }
                                 }
 
-
-
-                                static async Task<IEnumerable<Event>> SearchForEvent(int limit, string searchTerm)//Erkki
-                                {
-                                    //Hakee API:sta kaikki tapahtumat ja palauttaa limitin verran tapahtumia aikajärjestyksessä seuraavan 60 päivän sisältä
-                                    EventsList searchList = await MyHelsinkiApi.FindAllEvents();
-                                    //Haetaan käyttäjän hakusanalla käyttäjän suodattama määrä tapahtumia
-                                    var results =
-                                        searchList.data.
-                                        Where(e => e.name.fi.ToLower().
-                                        Contains(searchTerm.ToLower()) &&
-                                        e.event_dates.starting_day >= DateTime.Now.Date
-                                        && e.event_dates.starting_day < DateTime.Now.AddDays(60)).
-                                        OrderBy(e => e.event_dates.starting_day)
-                                        .Take(limit);
-                                    return results;
-                                }
+                                
                                 return true;
                             }
 
@@ -463,7 +443,30 @@ namespace MyHelsinkiApp
                 {
                     continue;
                 }
+
             }
+        }
+        static async Task<IEnumerable<Event>> SearchForEvent(int limit, string searchTerm)//Erkki
+        {
+            //Hakee API:sta kaikki tapahtumat ja palauttaa limitin verran tapahtumia aikajärjestyksessä seuraavan 60 päivän sisältä
+            EventsList searchList = await MyHelsinkiApi.FindAllEvents();
+            //Haetaan käyttäjän hakusanalla käyttäjän suodattama määrä tapahtumia
+            var results =
+                searchList.data.
+                Where(e => e.name.fi.ToLower().
+                Contains(searchTerm.ToLower()) &&
+                e.event_dates.starting_day >= DateTime.Now.Date
+                && e.event_dates.starting_day < DateTime.Now.AddDays(60)).
+                OrderBy(e => e.event_dates.starting_day)
+                .Take(limit);
+            return results;
+        }
+
+        public static void looppi()
+        {
+            Console.WriteLine("Search by event name(1) / search by city(2)");
+
+
         }
     }
    
