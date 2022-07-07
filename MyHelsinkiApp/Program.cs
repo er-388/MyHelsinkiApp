@@ -101,7 +101,7 @@ namespace MyHelsinkiApp
             else
             {
                 // get all activities
-                ActivityList activityList = await GetAllActivities(155);
+                ActivityList activityList = await GetAllActivities(152);
                 switch (userChoice)
                 {
                     case 1:
