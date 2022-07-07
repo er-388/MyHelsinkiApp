@@ -53,7 +53,21 @@ namespace MyHelsinkiApp
             return response;
 
         }
-     }
+
+
+        public static async Task<EventsList> FindAllEvents()
+        {
+
+            string eventUrl = url + "/v1/events/";
+
+            string urlParams = "";
+
+
+            EventsList searchList = await ApiHelper.RunAsync<EventsList>(eventUrl, urlParams);
+
+            return searchList;
+        }
+    }
     }
     
     
