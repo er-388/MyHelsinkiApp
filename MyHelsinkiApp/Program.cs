@@ -39,14 +39,15 @@ namespace MyHelsinkiApp
             foreach(Event muuta in haku.data)
             {
 
-                Console.WriteLine(muuta.name.fi + "\n" + muuta.location.address.street_address);
+                Console.WriteLine(muuta.name.fi + "n" + muuta.location.address.street_address);
             }
-            
+
             
             // Aadan terveiset
             //Erkin terveiset
             // hetan terveiset
 
+         
 
         }
        

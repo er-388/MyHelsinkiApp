@@ -53,8 +53,57 @@ namespace MyHelsinkiApp
             return response;
 
         }
+
+        public static async Task<EventsList> CitySearch(int cityNumber, string tag)
+        {
+            bool found = true;
+
+            Console.WriteLine("Mitä haluat hakea?");
+            Console.WriteLine("Aktiviteetteja - Paina 1.");
+            Console.WriteLine("Tapahtumia - Paina 2.");
+            Console.WriteLine("Paikkoja - Paina 3.");
+
+            int hakuNro = int.Parse(Console.ReadLine());
+
+            if( hakuNro == 2)
+            {
+                    Console.WriteLine("Syötä hakusana");
+                    string hakusana = Console.ReadLine();
+
+                    while(found == true)
+                    {
+                        try
+                        {
+                            EventsList hakuja = await MyHelsinkiApi.CitySearch(20, tag);
+                            Console.WriteLine(hakuja);
+                             
+                          
+                        
+                        foreach (Event cityEvent in hakuja.data)
+                            {
+
+                                Console.WriteLine(hakuja.data + "\n" + hakuja.data);
+                                break;
+                            }
+                        return hakuja;
+                    }
+
+                        catch(Exception)
+                        {
+                            Console.WriteLine("Hakusanalla ei löytynyt tapahtumia.");
+                            continue;
+                        }
+                    
+                  
+                    }
+               
+            }
+
+        }
+   
+        }
      }
-    }
+    
     
     
 
