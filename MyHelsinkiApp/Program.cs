@@ -16,9 +16,6 @@ namespace MyHelsinkiApp
 {
     class Program
     {
-
-
-
         static async Task Main(string[] args)
         {
 
@@ -28,7 +25,6 @@ namespace MyHelsinkiApp
                 displayMainMenu = await MainMenu();
             }
         }
-
 
         public static async Task<bool> MainMenu()
         {
@@ -103,10 +99,6 @@ namespace MyHelsinkiApp
             }
         }
 
-
-
-
-
         public static async Task<bool> ActivityMenu()
         {
             Console.WriteLine("-----------------------------------------------------");
@@ -148,7 +140,7 @@ namespace MyHelsinkiApp
                     case 3:
                         {
                             // check tags
-                            SearchByMonth(activityList);
+                            SearchByCategory(activityList);
                             return true;
                         }
                     case 4:
